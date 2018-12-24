@@ -1,0 +1,47 @@
+﻿<Window x:Class="MyWpfWordApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyWpfWordApp"
+        mc:Ignorable="d"
+        Title="MyWpfWordApp" Height="400" Width="530" Closing="Window_Closing">
+    <Grid>
+        <Rectangle Fill="#FF5D5D5D" Height="42" Stroke="Black" VerticalAlignment="Top" Margin="10,10,9.6,0" Grid.ColumnSpan="2"/>
+        <Label Content="Massages click to clear" HorizontalContentAlignment="Center"	 VerticalAlignment="Top" Margin="32,16,33.6,0" FontSize="14.667" FontWeight="Bold" FontFamily="Segoe WP Black" Opacity="0.4" Grid.ColumnSpan="2" Height="27"/>
+        <Label Content="{Binding Message}" ToolTip="Click to clear" VerticalAlignment="Top" Margin="20,19,20.6,0" Height="25" Background="#FF7A7A7A" MouseDown="Lable_Message_MouseDown" Opacity="0.745" FontWeight="Bold" Grid.ColumnSpan="2"/>
+
+        <GroupBox Header="Sender" Margin="93,89,0,0" BorderBrush="#FF0A0A0A" Height="50" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Full Address"/>
+                    <TextBox Text="{Binding FullAddressSender}" HorizontalAlignment="Left" Height="23" Width="210"/>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <GroupBox Header="Receiver" Margin="93,157,0,0" BorderBrush="#FF0A0A0A" Height="130" VerticalAlignment="Top" HorizontalAlignment="Left" Width="300">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="FirstName" Width="120" />
+                    <TextBox Text="{Binding FirstName}"  HorizontalAlignment="Left" Height="23" Width="160" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="Surname" Width="120"/>
+                    <TextBox Text="{Binding Surname}"  HorizontalAlignment="Left"  Height="23" Width="160" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="StreetHouseNumber" Width="120" />
+                    <TextBox Text="{Binding StreetHouseNumber}"  HorizontalAlignment="Left"  Height="23" Width="160" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="PostcodeCity" Width="120"/>
+                    <TextBox Text="{Binding PostcodeCity}"  HorizontalAlignment="Left"  Height="23" Width="160" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <Button Content="#1" ToolTip="Create the Word document with the specified data" HorizontalAlignment="Right" Margin="0,0,10,35" VerticalAlignment="Bottom" Width="75" Click="Button_1_Click"/>
+        <Button Content="Close" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" Click="Button_Close_Click"/>
+    </Grid>
+</Window>
